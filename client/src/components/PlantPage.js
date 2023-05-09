@@ -20,8 +20,8 @@ function PlantPage() {
     const updatedPlantsArray = [...plants, newPlant];
     setPlants(updatedPlantsArray);
   }
-
-  const displayedPlants = plants.filter((plant) => {
+  const plantsArray = Array.isArray(plants) ? plants : [];
+  const displayedPlants = plantsArray.filter((plant) => {
     return plant.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
